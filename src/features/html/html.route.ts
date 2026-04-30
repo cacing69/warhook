@@ -5,7 +5,7 @@ import { HtmlService } from "./html.service";
 const app = new Hono<{ Bindings: Bindings }>();
 const service = new HtmlService();
 
-app.get("/sample.html", async (c) => {
+app.get("/html/sample", async (c) => {
   const html = await service.getHtml(c.env, "sample.html", {
     username: "iamutaki",
   });

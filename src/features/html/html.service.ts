@@ -5,7 +5,8 @@ export class HtmlService {
   render(template: string, variables: Record<string, string>): string {
     let result = template;
     for (const [key, value] of Object.entries(variables)) {
-      result = result.replace(new RegExp(`{{${key}}}`, "g"), value);
+      const regex = new RegExp(`{{${key}}}`, "g");
+      result = result.replace(regex, value);
     }
     return result;
   }
@@ -19,9 +20,15 @@ export class HtmlService {
         );
         const template = await response.text();
 
-        return this.render(template, variables);
+        // Debug: log the variables
+        console.log('Variables:', variables);
+        const rendered = this.render(template, variables);
+        console.log('Rendered HTML preview:', rendered.substring(0, 200));
 
-      } catch {
+        return rendered;
+
+      } catch (error) {
+        console.error('ASSETS fetch error:', error);
         // Fallback to inline template
       }
     }
