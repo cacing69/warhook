@@ -36,8 +36,31 @@ attrs:
       "title" : "Title",
       "message" : "Body Example",
       // tags : optional
-      "tag": "x"
+      "tag": "blue_circle",
+      "actions": [
+        {
+          "action": "view",
+          "label": "Open Dashboard",
+          "url": "https://dashboard.example.com"
+        }
+      ]
     }
+---
+```
+```void
+---
+type: headers-table
+attrs:
+  uid: 2aad0bc2-2e61-4ff8-b6e8-d918877e9bf2
+  importedFrom: ""
+content:
+  - type: table
+    rows:
+      - attrs:
+          disabled: false
+        row:
+          - x-api-key
+          - "{{API_KEY}}"
 ---
 ```
 %%EMPTY_LINE%%
