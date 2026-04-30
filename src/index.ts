@@ -8,7 +8,7 @@ import { webhookRoutes } from "./features/webhook/webhook.route";
 const app = new Hono<{ Bindings: Bindings }>();
 
 app.route("/", healthRoutes);
-app.route("/html", htmlRoutes);
+app.route("/", htmlRoutes);
 app.route("/ntfy", ntfyRoutes);
 app.route("/webhook", webhookRoutes);
 
