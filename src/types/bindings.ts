@@ -3,4 +3,5 @@ export interface Bindings {
   JWT_SECRET: string;
   NTFY_DEFAULT_TOPIC: string;
   APP_ENV: string;
+  ASSETS: Fetcher;
 }

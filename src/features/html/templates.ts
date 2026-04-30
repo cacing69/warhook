@@ -1,0 +1,37 @@
+export const SAMPLE_HTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Page</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #333;
+    }
+    .info {
+      background: #f0f9ff;
+      border-left: 4px solid #0284c7;
+      padding: 16px;
+      margin: 20px 0;
+    }
+    .username {
+      font-weight: bold;
+      color: #0284c7;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sample Page</h1>
+  <div class="info">
+    <p>Hello, <span class="username">{{username}}</span>!</p>
+    <p>This is a sample HTML page served by Cloudflare Workers.</p>
+  </div>
+</body>
+</html>`;
