@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { cors } from "hono/cors";
 import type { Bindings } from "./types/bindings";
 import { healthRoutes } from "./features/health/health.route";
 import { htmlRoutes } from "./features/html/html.route";
@@ -7,6 +8,13 @@ import { webhookRoutes } from "./features/webhook/webhook.route";
 import { apiKeyRoutes } from "./features/api-keys/api-keys.route";
 
 const app = new Hono<{ Bindings: Bindings }>();
+
+// CORS configuration
+app.use("/*", cors({
+  origin: "*",
+  allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowHeaders: ["Content-Type", "Authorization", "x-api-key"],
+}));
 
 app.route("/", healthRoutes);
 app.route("/html", htmlRoutes);
